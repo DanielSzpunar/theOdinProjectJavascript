@@ -20,6 +20,7 @@ console.log(repeatString('hey', 1));
 console.log(repeatString('hey', -1));
 */
 
+
 //exercise #3 reverseString
 let reverseString = (string) => {
     return string.split('').reverse().join('');

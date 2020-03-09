@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script></script>
-  </head>
-  <body>
-    <h1>
-      
-    </h1>
+</head>
+
+<body>
     <div id="container">
-        
-      </div>
+
+    </div>
+    <hr />
+
+    <button onclick="alert('Hello World')">#1 onclick function built in the element</button>
+    <button id="btn1">#2 JS is now seperated. But can only have 1 click</button>
+    <button id="btn2">#3 JS is now seperated. Can have multiple functions on click</button>
+
+    <hr />
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+
     </div>
     <script>
         //Create a h1 and append to container
@@ -24,7 +36,7 @@
         //create p and append to container
         const paraElement = document.createElement('p')
         paraElement.textContent = 'Hey I\'m red!'
-        paraElement.style.color='red'
+        paraElement.style.color = 'red'
         container.appendChild(paraElement)
 
         //create a h3 tag append to container
@@ -46,9 +58,36 @@
         divElement.appendChild(h1InsideDiv)
         divElement.appendChild(paraInsideDiv)
         container.appendChild(divElement)
-        
 
+        const btn1 = document.querySelector('#btn1');
+        btn1.onclick = () => alert("Hello World Method 2");
 
+        const btn2 = document.querySelector('#btn2')
+        btn2.addEventListener('click', (e) => {
+            alert('Hello World method 3')
+            console.log(e);
+            console.log(e.target);
+            e.target.style.background = 'yellow';
+        })
+        btn2.addEventListener('mouseover', () => {
+            divElement.style.cssText = 'border: 1px solid black; background: green'
+        })
+        btn2.addEventListener('mouseout', () => {
+            divElement.style.cssText = 'border: 1px solid black; background: pink'
+        })
+
+        // buttons is a node list. It looks and acts much like an array.
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+            // and for each one we add a 'click' listener
+            button.addEventListener('click', (e) => {
+                alert(button.id);
+            });
+        });
     </script>
-  </body>
+</body>
+
 </html>

@@ -8,12 +8,47 @@
   </head>
   <body>
     <h1>
-      THE TITLE OF YOUR WEBPAGE
+      
     </h1>
     <div id="container">
-        <div class="content">
-        This is the glorious text-content!
+        
       </div>
     </div>
+    <script>
+        //Create a h1 and append to container
+        const container = document.getElementById("container")
+        const h1Element = document.createElement("h1")
+        h1Element.textContent = 'THE TITLE OF YOUR WEBPAGE'
+        container.appendChild(h1Element)
+
+        //create p and append to container
+        const paraElement = document.createElement('p')
+        paraElement.textContent = 'Hey I\'m red!'
+        paraElement.style.color='red'
+        container.appendChild(paraElement)
+
+        //create a h3 tag append to container
+        const h3Element = document.createElement('h3')
+        h3Element.textContent = 'I\'m a blue h3!'
+        h3Element.style.color = 'blue'
+        container.appendChild(h3Element)
+
+        //Create a div element and append to container:
+        const divElement = document.createElement('div')
+        divElement.style.cssText = 'border: 1px solid black; background: pink'
+
+        const h1InsideDiv = document.createElement('h1')
+        h1InsideDiv.textContent = 'I\'m in a div'
+
+        const paraInsideDiv = document.createElement('p')
+        paraInsideDiv.textContent = 'ME TOO!'
+
+        divElement.appendChild(h1InsideDiv)
+        divElement.appendChild(paraInsideDiv)
+        container.appendChild(divElement)
+        
+
+
+    </script>
   </body>
 </html>

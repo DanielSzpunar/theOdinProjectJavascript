@@ -1,0 +1,13 @@
+display: flex;
+
+flex-direction: row (default)
+                column
+                column-reverse (pointing north)
+                row-reverse (west)
+
+justify-content: center
+                flex-end
+                space-between
+                space-around
+
+where the content will line up
